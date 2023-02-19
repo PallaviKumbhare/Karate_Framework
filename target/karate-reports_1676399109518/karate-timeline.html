@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/userDetails[1:6]","start":1676398400331,"end":1676398402019,"title":"src\/test\/java\/Karate\/SampleKarate\/userDetails[1:6] 23:43:20.331-23:43:22.019 GET Users Details"},{"id":2,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/userDetails[2:14]","start":1676398402027,"end":1676398402980,"title":"src\/test\/java\/Karate\/SampleKarate\/userDetails[2:14] 23:43:22.027-23:43:22.980 POST for new User id"},{"id":3,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/userDetails[3:25]","start":1676398402986,"end":1676398403647,"title":"src\/test\/java\/Karate\/SampleKarate\/userDetails[3:25] 23:43:22.986-23:43:23.647 GET request for particular User id"},{"id":4,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/userDetails[4:34]","start":1676398403655,"end":1676398404372,"title":"src\/test\/java\/Karate\/SampleKarate\/userDetails[4:34] 23:43:23.655-23:43:24.372 PUT request to update the existing user id"},{"id":5,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/userDetails[5:44]","start":1676398404379,"end":1676398405169,"title":"src\/test\/java\/Karate\/SampleKarate\/userDetails[5:44] 23:43:24.379-23:43:25.169 Delete a particular user id"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

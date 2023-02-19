@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[1:3]","start":1676105780178,"end":1676105783153,"title":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[1:3] 14:26:20.178-14:26:23.153 GET all the book details"},{"id":2,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[2:11]","start":1676105783162,"end":1676105783879,"title":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[2:11] 14:26:23.162-14:26:23.879 POST to add new book details","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[3:19]","start":1676105783897,"end":1676105784565,"title":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[3:19] 14:26:23.897-14:26:24.565 GET Details of books"},{"id":4,"group":1,"content":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[4:27]","start":1676105784571,"end":1676105785168,"title":"src\/test\/java\/Karate\/SampleKarate\/bookDetails[4:27] 14:26:24.571-14:26:25.168 Update details of book PUTrequest"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
