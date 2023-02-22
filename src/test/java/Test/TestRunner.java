@@ -1,10 +1,8 @@
 package Test;
 
-import org.junit.Test;
-
-
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
+import org.junit.jupiter.api.Test;
 
 
 //@RunWith(Karate.class)
@@ -14,8 +12,8 @@ public class TestRunner
 {
 	@Test
     public void testParallel() {
-        Results results =Runner.path("Test")
-        		.tags("@Pallavi")
+        Results results = Runner.path("classpath:Test")
+        		.tags("@Print")
         		.parallel(1);
 }
 }
