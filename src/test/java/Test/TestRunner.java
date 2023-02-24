@@ -13,7 +13,7 @@ public class TestRunner
 	@Test
     public void testParallel() {
         Results results = Runner.path("classpath:Test")
-        		.tags("@Print")
+        		.tags("@Pallavi")
         		.parallel(1);
 }
 }
