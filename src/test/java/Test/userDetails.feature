@@ -2,12 +2,12 @@
 Feature: User Details
 
 Background: 
- * url 'https://fakerestapi.azurewebsites.net/api/v1'
+ * url baseUrl
  * header Accept = 'application/json'
  
 
 #GET User Details
- @Print
+@Print
 Scenario: GET Users Details
 
 Given path '/Users'
@@ -15,7 +15,7 @@ When method GET
 Then status 200
 And print 'Response data=', response
 And print 'response',response.length
-  * def num = response.length-1
+* def num = response.length-1
 * def ids = get response[*].userName
 * print 'ids=',ids
 
@@ -58,6 +58,11 @@ Then status 200
 And print responseHeaders
 
 
+@TestJava
+Scenario: Reading Java File
+Then def Data1 = Java.type('javafile.Reader')
+Then def SumValue = Data1.sum(20 ,10)
+And print "sumValue=", SumValue
 
-Scenario: using get and set method
+
 
