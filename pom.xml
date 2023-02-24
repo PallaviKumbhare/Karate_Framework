@@ -25,11 +25,14 @@
 			<version>${karate.version}</version>
 			<scope>test</scope>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>net.masterthought</groupId>-->
-<!--			<artifactId>cucumber-reporting</artifactId>-->
-<!--			<version>3.8.0</version>-->
-<!--		</dependency>-->
+
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>5.7.2</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
